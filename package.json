@@ -2,9 +2,9 @@
   "name": "test_server",
   "version": "1.0.0",
   "description": "",
-  "main": "test.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon test.js"
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
