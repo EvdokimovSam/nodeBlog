@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const postRoutes = require('./routes/post-routes');
+const postApiRoutes = require('./routes/api-post-routes');
 const contactRoutes = require('./routes/contact-routes');
 const createPath = require('./helpers/create-path');
 
@@ -23,7 +24,6 @@ app.listen(PORT, (error) => {
 });
 
 //файловая работа
-const req = require('express/lib/request');
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 
 app.use(contactRoutes);
 app.use(postRoutes);
-
+app.use(postApiRoutes);
 //рендер ошибки методом use
 app.use((req, res) => {
     console.log(`404: Not Found - ${req.method} ${req.originalUrl}`);
